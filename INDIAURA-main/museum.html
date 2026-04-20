@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Grand Museum | Indiaura</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .museum-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .museum-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            transition: transform 0.5s ease;
+        }
+
+        .museum-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 1000px;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+        }
+
+        .artifact-frame {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto 2rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--color-primary);
+            box-shadow: 0 0 50px rgba(255, 179, 71, 0.3);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .artifact-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="glass-panel"
+        style="position: fixed; top: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 1600px; z-index: 1000; padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center;">
+        <div class="logo"
+            style="font-family: var(--font-heading); font-size: 2rem; font-weight: 700; color: var(--color-primary);">
+            <a href="index.html">🏛️ The Grand Museum</a>
+        </div>
+        <div class="nav-actions">
+            <a href="index.html" class="btn-outline" style="padding: 10px 24px; font-size: 1rem;">Exit Museum</a>
+        </div>
+    </nav>
+
+    <!-- Exhibit 1 -->
+    <section class="museum-section">
+        <div class="museum-bg" style="background-image: url('assets/ajanta.png');"></div>
+        <div class="museum-content animate-fade-up">
+            <div class="artifact-frame">
+                <img src="assets/ajanta.png" class="artifact-img" alt="Ajanta">
+            </div>
+            <h1>The Silent Caves</h1>
+            <p style="font-size: 1.5rem; color: #ddd; margin-bottom: 2rem;">
+                "In the heart of the mountain, stories were carved before paper was born."
+            </p>
+            <div style="font-size: 1.2rem; color: var(--color-primary);">2nd Century BCE • Maharashtra</div>
+        </div>
+    </section>
+
+    <!-- Exhibit 2 -->
+    <section class="museum-section">
+        <div class="museum-bg" style="background-image: url('assets/konark.png');"></div>
+        <div class="museum-content animate-fade-up">
+            <div class="artifact-frame">
+                <img src="assets/konark.png" class="artifact-img" alt="Konark">
+            </div>
+            <h1>The Celestial Chariot</h1>
+            <p style="font-size: 1.5rem; color: #ddd; margin-bottom: 2rem;">
+                "Time is the rider, and the sun is the destination."
+            </p>
+            <div style="font-size: 1.2rem; color: var(--color-primary);">13th Century • Odisha</div>
+        </div>
+    </section>
+
+    <!-- Exhibit 3 -->
+    <section class="museum-section">
+        <div class="museum-bg" style="background-image: url('assets/hampi.png');"></div>
+        <div class="museum-content animate-fade-up">
+            <div class="artifact-frame">
+                <img src="assets/hampi.png" class="artifact-img" alt="Hampi">
+            </div>
+            <h1>The Lost Empire</h1>
+            <p style="font-size: 1.5rem; color: #ddd; margin-bottom: 2rem;">
+                "Where stones speak louder than kings."
+            </p>
+            <div style="font-size: 1.2rem; color: var(--color-primary);">14th Century • Karnataka</div>
+        </div>
+    </section>
+
+    <script type="module" src="js/main.js"></script>
+    <div class="india-bg-watermark"></div>
+<script type="module" src="js/interactions.js"></script><div class="india-bg-watermark"></div><script type="module" src="js/chronos.js"></script><script type="module" src="js/veda.js"></script><script type="module" src="js/aurasynth.js"></script></body>
+
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heritage Map | Indiaura</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            overflow: hidden;
+        }
+
+        /* Lock scroll for map app feel */
+
+        #map-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            z-index: 1;
+            opacity: 0;
+            /* For fade-in animation */
+            transition: opacity 1.5s ease-out;
+        }
+
+        /* Ensure Nav is above map */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1rem 3rem;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
+            border: none;
+            backdrop-filter: none;
+            /* Override default glass for top gradient feel, or keep glass */
+        }
+
+        /* But we want the specific glass bar requested */
+        .nav-glass-bar {
+            max-width: 1400px;
+            margin: 20px auto 0;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Popup Content Styling */
+        .popup-card {
+            width: 250px;
+        }
+
+        .popup-img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--color-primary);
+        }
+
+        .popup-content {
+            padding: 1rem;
+        }
+
+        .popup-title {
+            font-family: var(--font-heading);
+            color: var(--color-primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .popup-desc {
+            font-size: 0.85rem;
+            color: #ddd;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .popup-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .popup-btn {
+            flex: 1;
+            padding: 6px 0;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            cursor: pointer;
+            border: none;
+            transition: opacity 0.2s;
+        }
+
+        .btn-listen {
+            background: var(--color-primary);
+            color: #000;
+            font-weight: 600;
+        }
+
+        .btn-view {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+
+        .btn-view:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--color-bg-deep);
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 1s ease;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loading" class="loading-overlay">
+        <h2 style="color: var(--color-primary); letter-spacing: 3px;">INDIAURA MAP</h2>
+    </div>
+
+    <!-- Navigation -->
+    <div style="position: fixed; top: 0; width: 100%; z-index: 1000; padding-top: 20px;">
+        <nav class="glass-panel nav-glass-bar">
+            <div class="logo"
+                style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-primary); display: flex; align-items: center; gap: 10px;">
+                <span>🕉️</span> Indiaura
+            </div>
+
+            <div class="nav-links" style="display: flex; gap: 2.5rem;">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="explore.html" class="nav-link">Virtual Tours</a>
+                <a href="map.html" class="nav-link active">Map</a>
+                <a href="events.html" class="nav-link">Events</a>
+            </div>
+
+            <div class="nav-actions" style="display: flex; gap: 1rem; align-items: center;">
+                <div style="position: relative;">
+                    <select
+                        style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 20px; font-family: var(--font-body); cursor: pointer; outline: none;">
+                        <option>🇬🇧 English</option>
+                        <option>🇮🇳 Hindi</option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Map Container -->
+    <div id="map-container"></div>
+
+    <!-- Atmospheric Overlays -->
+    <div class="india-silhouette" id="silhouette"></div>
+    <div class="map-vignette"></div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/map.js"></script>
+<script type="module" src="js/chronos.js"></script><script type="module" src="js/veda.js"></script><script type="module" src="js/aurasynth.js"></script></body>
+
+</html>

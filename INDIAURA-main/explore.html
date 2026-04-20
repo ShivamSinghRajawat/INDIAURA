@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Heritage | Indiaura</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .filter-bar {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 8px 20px;
+            border-radius: 30px;
+            color: var(--color-text-muted);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--color-primary);
+            color: #000;
+        }
+
+        .heritage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding-bottom: 4rem;
+        }
+
+        .heritage-card {
+            background: var(--color-bg-card);
+            border: var(--glass-border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .heritage-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--glass-shadow);
+        }
+
+        .card-img {
+            height: 200px;
+            width: 100%;
+            background-color: #2a2a2a;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-tag {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-location {
+            font-size: 0.9rem;
+            color: var(--color-text-muted);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation (Same as Home) -->
+    <nav class="glass-panel"
+        style="position: sticky; top: 20px; width: 90%; max-width: 1200px; margin: 0 auto; z-index: 1000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;">
+        <div class="logo"
+            style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-primary);">
+            <a href="index.html">🕉️ Indiaura</a>
+        </div>
+        <div class="nav-links" style="display: flex; gap: 2rem;">
+            <a href="index.html">Home</a>
+            <a href="explore.html" style="color: var(--color-primary);">Explore</a>
+            <a href="events.html">Events</a>
+            <a href="community.html">Community</a>
+        </div>
+        <div class="nav-actions">
+            <button class="btn-outline"
+                style="padding: 6px 12px; font-size: 0.8rem; margin-right: 15px;">Profile</button>
+            <!-- Theme toggle injected here -->
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top: 4rem;">
+        <h1 class="animate-fade-up">Explore India's Treasures</h1>
+        <p class="animate-fade-up" style="color: var(--color-text-muted); max-width: 600px; margin-top: 1rem;">
+            Discover monuments, art forms, and festivals from every corner of the nation.
+        </p>
+
+        <!-- Search & Filter -->
+        <div class="filter-controls animate-fade-up" style="animation-delay: 0.2s;">
+            <!-- Search Input -->
+            <div style="margin-bottom: 1.5rem; position: relative; max-width: 500px;">
+                <input type="text" id="search-input" placeholder="Search monuments, festivals, or locations..."
+                    style="width: 100%; padding: 12px 20px; border-radius: 30px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; font-family: var(--font-body); outline: none; transition: all 0.3s;">
+                <span
+                    style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 1.2rem;">🔍</span>
+            </div>
+
+            <div class="filter-bar">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="monument">Monuments</button>
+                <button class="filter-btn" data-filter="art">Art & Dance</button>
+                <button class="filter-btn" data-filter="festival">Festivals</button>
+                <button class="filter-btn" data-filter="unesco">UNESCO Sites</button>
+            </div>
+        </div>
+
+        <!-- Grid -->
+        <div id="heritage-grid" class="heritage-grid animate-fade-up" style="animation-delay: 0.4s;">
+            <!-- Content will be injected by JS -->
+        </div>
+    </div>
+
+    <script type="module" src="js/explore.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <div class="india-bg-watermark"></div>
+    <script type="module" src="js/interactions.js"></script>
+    <div class="india-bg-watermark"></div>
+    <script type="module" src="js/chronos.js"></script>
+    <script type="module" src="js/veda.js"></script>
+    <script type="module" src="js/aurasynth.js"></script>
+</body>
+
+</html>

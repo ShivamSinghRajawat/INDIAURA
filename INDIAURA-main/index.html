@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indiaura | Digital Heritage Preservation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Three.js CDN -->
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.150.1/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.150.1/examples/jsm/"
+        }
+      }
+    </script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="glass-panel"
+        style="position: fixed; top: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 1200px; z-index: 1000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;">
+        <div class="logo"
+            style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-primary); display: flex; align-items: center; gap: 10px;">
+            <span style="font-size: 1.8rem;">🕉️</span> Indiaura
+        </div>
+        <div class="nav-links" style="display: flex; gap: 2rem;">
+            <a href="index.html" style="color: var(--color-primary);">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="events.html">Events</a>
+            <a href="community.html">Community</a>
+            <a href="about.html">About</a>
+        </div>
+        <div class="nav-actions" style="display: flex; gap: 1rem; align-items: center;">
+            <button id="lang-toggle" class="btn-outline" style="padding: 8px 16px; font-size: 0.8rem;">
+                🇺🇸 EN / 🇮🇳 HI
+            </button>
+            <div class="user-profile"
+                style="width: 35px; height: 35px; background: var(--color-primary); border-radius: 50%; cursor: pointer;">
+            </div>
+            <!-- Theme toggle injected here -->
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" style="height: 100vh; position: relative; display: flex; align-items: center; overflow: hidden;">
+        <!-- 3D Background Container -->
+        <div id="canvas-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
+            <!-- Three.js Canvas will be injected here -->
+        </div>
+
+        <!-- Overlay Content -->
+        <div class="container" style="position: relative; z-index: 10; padding-top: 80px;">
+            <div class="hero-content" style="max-width: 600px;">
+                <div class="tagline animate-fade-up"
+                    style="color: var(--color-secondary); font-weight: 700; margin-bottom: 1.5rem; letter-spacing: 4px; text-transform: uppercase; font-size: 1.2rem;">
+                    Preserving India’s Culture Digitally 🇮🇳
+                </div>
+
+                <!-- Hero Search Bar -->
+                <div class="animate-fade-up" style="margin-bottom: 2rem; position: relative; max-width: 400px;">
+                    <form id="home-search-form"
+                        onsubmit="event.preventDefault(); window.location.href='explore.html?search=' + document.getElementById('home-search').value">
+                        <input type="text" id="home-search" placeholder="Search heritage..."
+                            style="width: 100%; padding: 12px 20px; border-radius: 30px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white; font-family: var(--font-body); outline: none; backdrop-filter: blur(5px);">
+                        <button type="submit"
+                            style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; font-size: 1.2rem; cursor: pointer;">🔍</button>
+                    </form>
+                </div>
+                <h1 class="animate-fade-up"
+                    style="font-size: 5rem; line-height: 1.1; margin-bottom: 2.5rem; text-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+                    Experience the <br> <span style="color: var(--color-text-main); font-size: 6rem;">Timeless
+                        Heritage</span>
+                </h1>
+                <p class="animate-fade-up"
+                    style="font-size: 1.2rem; color: var(--color-text-muted); margin-bottom: 3rem; max-width: 90%;">
+                    Embark on an immersive journey through India's monuments, arts, and stories. From the Taj Mahal to
+                    hidden gems, explore it all in 3D.
+                </p>
+                <div class="cta-group animate-fade-up" style="display: flex; gap: 1.5rem;">
+                    <a href="explore.html" class="btn btn-primary">Explore Heritage</a>
+                    <a href="museum.html" class="btn btn-outline" style="font-size: 1rem; padding: 12px 30px;">Enter
+                        Grand Museum</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Card Overlay (Bottom Right) -->
+        <div class="glass-panel"
+            style="position: absolute; bottom: 50px; right: 5%; width: 350px; padding: 20px; z-index: 20; transform: perspective(1000px) rotateY(-10deg); transition: transform 0.3s ease;">
+            <div
+                style="font-size: 0.8rem; color: var(--color-primary); margin-bottom: 10px; text-transform: uppercase;">
+                Heritage Site of the Week</div>
+            <h3 style="font-size: 1.5rem; margin-bottom: 10px;">The Sun Temple</h3>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 15px;">
+                Konark, Odisha. A masterpiece of Kalinga architecture built in the 13th century.
+            </p>
+            <div
+                style="height: 150px; background: url('assets/konark.png') center/cover; border-radius: 8px; margin-bottom: 15px;">
+            </div>
+            <a href="detail.html" style="font-size: 0.9rem; color: var(--color-primary); font-weight: 600;">View Details
+                &rarr;</a>
+        </div>
+    </section>
+
+    <!-- JS Imports -->
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/three_scene.js"></script>
+    <div class="india-bg-watermark"></div>
+    <script type="module" src="js/interactions.js"></script>
+    <div class="india-bg-watermark"></div>
+    <script type="module" src="js/chronos.js"></script>
+    <script type="module" src="js/veda.js"></script>
+    <script type="module" src="js/aurasynth.js"></script>
+</body>
+
+</html>

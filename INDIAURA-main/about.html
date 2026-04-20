@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Indiaura</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .about-section {
+            background: rgba(255, 255, 255, 0.03);
+            border: var(--glass-border);
+            border-radius: 12px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-card {
+            text-align: center;
+        }
+
+        .team-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: var(--color-primary);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            border: 2px solid var(--color-text-main);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="glass-panel"
+        style="position: sticky; top: 20px; width: 90%; max-width: 1200px; margin: 0 auto; z-index: 1000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;">
+        <div class="logo"
+            style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-primary);">
+            <a href="index.html">🕉️ Indiaura</a>
+        </div>
+        <div class="nav-links" style="display: flex; gap: 2rem;">
+            <a href="explore.html">Explore</a>
+            <a href="events.html">Events</a>
+            <a href="community.html">Community</a>
+            <a href="about.html" style="color: var(--color-primary);">About</a>
+        </div>
+        <div class="nav-actions">
+            <a href="index.html" class="btn-outline" style="padding: 6px 12px; margin-right: 15px;">Home</a>
+            <!-- Theme toggle injected here -->
+        </div>
+    </nav>
+
+    <div class="container animate-fade-up" style="margin-top: 4rem;">
+
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h1>Preserving the Eternal</h1>
+            <p style="color: var(--color-text-muted); max-width: 700px; margin: 1rem auto;">
+                Indiaura is a digital initiative to document, preserve, and showcase the rich tapestry of India's
+                cultural heritage using modern web technologies.
+            </p>
+        </div>
+
+        <div class="about-section">
+            <h2 style="color: var(--color-secondary);">Our Mission</h2>
+            <p style="font-size: 1.1rem; margin-top: 1rem; line-height: 1.8;">
+                To build the world's most accessible and immersive digital archive of Indian monuments, folk arts, and
+                living traditions. We believe that heritage is not just about the past, but a living bridge to our
+                future. Through Virtual Reality, AI Storytelling, and Community sourcing, we bring history to life.
+            </p>
+        </div>
+
+        <div class="about-section">
+            <h2>The Creators</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">👨‍💻</div>
+                    <h3>Project Lead</h3>
+                    <p style="color: var(--color-text-muted);">Architecture & Core</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">🎨</div>
+                    <h3>Design Team</h3>
+                    <p style="color: var(--color-text-muted);">UI/UX & 3D Assets</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">📚</div>
+                    <h3>Research</h3>
+                    <p style="color: var(--color-text-muted);">History & Culture</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+    <div class="india-bg-watermark"></div>
+<script type="module" src="js/interactions.js"></script><div class="india-bg-watermark"></div><script type="module" src="js/chronos.js"></script><script type="module" src="js/veda.js"></script><script type="module" src="js/aurasynth.js"></script></body>
+
+</html>

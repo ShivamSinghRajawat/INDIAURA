@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community | Indiaura</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .split-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px;
+            border-radius: 8px;
+            color: white;
+            margin-bottom: 1rem;
+            font-family: var(--font-body);
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        .stat-box {
+            background: var(--color-bg-card);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="glass-panel"
+        style="position: sticky; top: 20px; width: 90%; max-width: 1200px; margin: 0 auto; z-index: 1000; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center;">
+        <div class="logo"
+            style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 700; color: var(--color-primary);">
+            <a href="index.html">🕉️ Indiaura</a>
+        </div>
+        <div class="nav-links" style="display: flex; gap: 2rem;">
+            <a href="explore.html">Explore</a>
+            <a href="events.html">Events</a>
+            <a href="community.html" style="color: var(--color-primary);">Community</a>
+        </div>
+        <div class="nav-actions">
+            <a href="index.html" class="btn-outline" style="padding: 6px 12px; margin-right: 15px;">Home</a>
+            <!-- Theme toggle injected here -->
+        </div>
+    </nav>
+
+    <div class="container animate-fade-up" style="margin-top: 4rem;">
+
+        <div class="split-layout">
+            <!-- Left: Contribute Form -->
+            <div>
+                <h1>Contribute Your Story</h1>
+                <p style="color: var(--color-text-muted); margin-bottom: 2rem;">
+                    Do you know a local legend, a forgotten monument, or a folk tradition? simple share it with the
+                    world.
+                </p>
+
+                <form id="story-form" onsubmit="submitStory(event)">
+                    <label>Title of Story / Heritage Site</label>
+                    <input type="text" placeholder="e.g. The Forgotten Stepwell of..." required>
+
+                    <label>Category</label>
+                    <select>
+                        <option>Local Legend</option>
+                        <option>Folk Art</option>
+                        <option>Monument</option>
+                        <option>Culinary History</option>
+                    </select>
+
+                    <label>Your Story</label>
+                    <textarea rows="6" placeholder="Write your story here..." required></textarea>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit for Expert
+                        Verification</button>
+                    <p style="font-size: 0.8rem; color: #666; margin-top: 10px; text-align: center;">
+                        *All submissions are vetted by our cultural committee.
+                    </p>
+                </form>
+            </div>
+
+            <!-- Right: Impact & Donation -->
+            <div>
+                <h2 style="margin-bottom: 2rem;">Our Impact</h2>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 3rem;">
+                    <div class="stat-box">
+                        <div class="stat-number">1,200+</div>
+                        <div>Stories Archived</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-number">50+</div>
+                        <div>Monuments Mapped</div>
+                    </div>
+                </div>
+
+                <div class="glass-panel" style="padding: 2rem; border-color: var(--color-secondary);">
+                    <h3 style="color: var(--color-secondary);">Support Preservation</h3>
+                    <p style="margin: 1rem 0;">Your donations help us document endangered heritage sites using 3D
+                        scanning technology.</p>
+                    <button class="btn btn-outline"
+                        style="border-color: var(--color-secondary); color: var(--color-secondary); width: 100%;">Donate
+                        Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function submitStory(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+
+            btn.innerText = "Submitting...";
+
+            setTimeout(() => {
+                alert("✅ Story Submitted Successfully!\n\nThank you for contributing to India's digital heritage. Our team will review it shortly.");
+                e.target.reset();
+                btn.innerText = originalText;
+            }, 1500);
+        }
+    </script>
+    <script type="module" src="js/main.js"></script>
+    <div class="india-bg-watermark"></div>
+<script type="module" src="js/interactions.js"></script><div class="india-bg-watermark"></div><script type="module" src="js/chronos.js"></script><script type="module" src="js/veda.js"></script><script type="module" src="js/aurasynth.js"></script></body>
+
+</html>
